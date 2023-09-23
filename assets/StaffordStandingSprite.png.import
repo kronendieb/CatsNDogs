@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyhvt5iefccg6"
-path.s3tc="res://.godot/imported/Stafford-Right.png-2075439eff08cc1ce07f1af08d2aa66f.s3tc.ctex"
+uid="uid://c71slkf5keg0n"
+path.s3tc="res://.godot/imported/StaffordStandingSprite.png-57cc495e7abf1d22d513af2b5951c99f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Stafford-Right.png"
-dest_files=["res://.godot/imported/Stafford-Right.png-2075439eff08cc1ce07f1af08d2aa66f.s3tc.ctex"]
+source_file="res://assets/StaffordStandingSprite.png"
+dest_files=["res://.godot/imported/StaffordStandingSprite.png-57cc495e7abf1d22d513af2b5951c99f.s3tc.ctex"]
 
 [params]
 

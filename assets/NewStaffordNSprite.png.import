@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b67yp5a32hfv4"
-path.s3tc="res://.godot/imported/Stafford-SE.png-f9592599c53df8049327d7a827f99a0c.s3tc.ctex"
+uid="uid://buyhhhrkahbsc"
+path.s3tc="res://.godot/imported/NewStaffordNSprite.png-d83b6f2c6427a815ed88fb448446d0bc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Stafford-SE.png"
-dest_files=["res://.godot/imported/Stafford-SE.png-f9592599c53df8049327d7a827f99a0c.s3tc.ctex"]
+source_file="res://assets/NewStaffordNSprite.png"
+dest_files=["res://.godot/imported/NewStaffordNSprite.png-d83b6f2c6427a815ed88fb448446d0bc.s3tc.ctex"]
 
 [params]
 
