@@ -3,7 +3,10 @@ using System;
 
 public partial class Cop : CharacterBody3D
 {
-	public const float Speed = 5.0f;
+	[Export]
+	public float Speed {get;set;} = 5.0f;
+	[Export]
+	public float AgroRange {get;set;} = 5.0f;
 	public const float JumpVelocity = 4.5f;
 	[Export]
 	public Node3D Target {get; set;}
@@ -21,9 +24,9 @@ public partial class Cop : CharacterBody3D
 
 		// Get the input direction and handle the movement/deceleration.
 		// As good practice, you should replace UI actions with custom gameplay actions.
-		Vector2 inputDir = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		Vector3 direction = (Transform.Basis * new Vector3(Target.Position.X, 0, Target.Position.Y)).Normalized();
-		if (direction != Vector3.Zero)
+		LookAt(Target.Position);
+		Vector3 direction = -GlobalTransform.Basis.Z;
+		if (direction != Vector3.Zero && Position.DistanceSquaredTo(Target.Position) < AgroRange * AgroRange)
 		{
 			velocity.X = direction.X * Speed;
 			velocity.Z = direction.Z * Speed;

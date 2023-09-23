@@ -1,11 +1,14 @@
-[gd_scene load_steps=46 format=3 uid="uid://bxrt66p01t4nb"]
+[gd_scene load_steps=69 format=3 uid="uid://bxrt66p01t4nb"]
 
 [ext_resource type="Script" path="res://Scripts/SmoothCamera.cs" id="1_kubvq"]
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="1_rbcaf"]
 [ext_resource type="Texture2D" uid="uid://dxigqs1ccdcwd" path="res://assets/Stafford-Left.png" id="2_qxjwe"]
 [ext_resource type="Script" path="res://Scripts/PlayerAnimation.cs" id="3_ps3a2"]
 [ext_resource type="Texture2D" uid="uid://dyhvt5iefccg6" path="res://assets/Stafford-Right.png" id="3_yeidd"]
+[ext_resource type="Texture2D" uid="uid://b67yp5a32hfv4" path="res://assets/Stafford-SE.png" id="4_gp7b1"]
+[ext_resource type="Texture2D" uid="uid://dcfh3b0t4fa11" path="res://assets/Stafford-SW.png" id="5_sa0hs"]
 [ext_resource type="Script" path="res://Scripts/Cop.cs" id="6_r2h6k"]
+[ext_resource type="Texture2D" uid="uid://dsy6brgj73eje" path="res://assets/TempCop.jpg" id="9_2mbsm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h8fvp"]
 
@@ -145,6 +148,78 @@ region = Rect2(4800, 3600, 1200, 1200)
 atlas = ExtResource("3_yeidd")
 region = Rect2(0, 4800, 1200, 1200)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fa0ce"]
+atlas = ExtResource("4_gp7b1")
+region = Rect2(0, 0, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7hbf"]
+atlas = ExtResource("4_gp7b1")
+region = Rect2(1200, 0, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fvyw"]
+atlas = ExtResource("4_gp7b1")
+region = Rect2(2400, 0, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h8nq"]
+atlas = ExtResource("4_gp7b1")
+region = Rect2(3600, 0, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oeatu"]
+atlas = ExtResource("4_gp7b1")
+region = Rect2(4800, 0, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wv8ou"]
+atlas = ExtResource("4_gp7b1")
+region = Rect2(0, 1200, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g838d"]
+atlas = ExtResource("4_gp7b1")
+region = Rect2(1200, 1200, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wupr"]
+atlas = ExtResource("4_gp7b1")
+region = Rect2(2400, 1200, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkxm0"]
+atlas = ExtResource("4_gp7b1")
+region = Rect2(3600, 1200, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7vj6"]
+atlas = ExtResource("5_sa0hs")
+region = Rect2(0, 0, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_333w6"]
+atlas = ExtResource("5_sa0hs")
+region = Rect2(1200, 0, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8qs4"]
+atlas = ExtResource("5_sa0hs")
+region = Rect2(2400, 0, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shter"]
+atlas = ExtResource("5_sa0hs")
+region = Rect2(3600, 0, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vies2"]
+atlas = ExtResource("5_sa0hs")
+region = Rect2(4800, 0, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlwbm"]
+atlas = ExtResource("5_sa0hs")
+region = Rect2(0, 1200, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uuj7"]
+atlas = ExtResource("5_sa0hs")
+region = Rect2(1200, 1200, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7axa"]
+atlas = ExtResource("5_sa0hs")
+region = Rect2(2400, 1200, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gy1dd"]
+atlas = ExtResource("5_sa0hs")
+region = Rect2(3600, 1200, 1200, 1200)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_uj1m4"]
 atlas = ExtResource("2_qxjwe")
 region = Rect2(0, 0, 1200, 1200)
@@ -265,6 +340,70 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_fa0ce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7hbf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fvyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3h8nq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oeatu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wv8ou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g838d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wupr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkxm0")
+}],
+"loop": true,
+"name": &"SouthEast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7vj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_333w6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8qs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shter")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vies2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlwbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uuj7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7axa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gy1dd")
+}],
+"loop": true,
+"name": &"SouthWest",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_uj1m4")
 }],
 "loop": true,
@@ -274,7 +413,14 @@ animations = [{
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_httl5"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_x8ru5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xdyh1"]
+albedo_texture = ExtResource("9_2mbsm")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_xrx7l"]
+material = SubResource("StandardMaterial3D_xdyh1")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5swby"]
 
 [node name="World" type="Node3D"]
 
@@ -287,6 +433,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36383, 0)
 transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0, 0, 0)
 
 [node name="Ground" type="Node3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="GroundCollision" type="CSGBox3D" parent="Ground"]
 use_collision = true
@@ -295,6 +442,8 @@ size = Vector3(15, 1, 15)
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 1.88033, 0)
 script = ExtResource("1_rbcaf")
+Speed = 6.0
+Deceleration = 4.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 shape = SubResource("CapsuleShape3D_h8fvp")
@@ -304,26 +453,34 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.0163004, 0.00553226, 
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_6nqcj")
 animation = &"Left"
-frame_progress = 0.297504
+frame_progress = 0.633959
 script = ExtResource("3_ps3a2")
 
 [node name="CameraPivot" type="Node3D" parent="." node_paths=PackedStringArray("Target")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.076684, 2.78187, -0.0645771)
 script = ExtResource("1_kubvq")
 Target = NodePath("../Player")
 SmoothSpeed = 4.0
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 2, 2, 2)
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 2.5, 2.5, 2.5)
 size = 5.0
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." node_paths=PackedStringArray("Target")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.71141, 1.81012, -4.88726)
+[node name="Cop" type="CharacterBody3D" parent="." node_paths=PackedStringArray("Target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16396, 1.81012, 1.38767)
 script = ExtResource("6_r2h6k")
+Speed = 3.0
 Target = NodePath("../Player")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cop"]
 shape = SubResource("CapsuleShape3D_httl5")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
-mesh = SubResource("CapsuleMesh_x8ru5")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cop"]
+mesh = SubResource("QuadMesh_xrx7l")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.376, 1.44529, 0)
+
+[node name="Area3D" type="Area3D" parent="Node3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D"]
+shape = SubResource("BoxShape3D_5swby")

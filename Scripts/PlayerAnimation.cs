@@ -11,11 +11,26 @@ public partial class PlayerAnimation : AnimatedSprite3D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		if (Input.IsActionPressed("Right")){
-			Play("Right");
+		if(Input.IsActionPressed("Backwards")){
+			if(Input.IsActionPressed("Left")){
+				Play("SouthWest");
+			}else{
+				Play("SouthEast");
+			}
+		}
+		else if (Input.IsActionPressed("Right")){
+			if(Input.IsActionPressed("Backwards")){
+				Play("SouthEast");
+			}else{
+				Play("Right");
+			}
 		}
 		else if (Input.IsActionPressed("Left")){
-			Play("Left");
+			if(Input.IsActionPressed("Backwards")){
+				Play("SouthWest");
+			}else{
+				Play("Left");
+			}
 		}
 		else{
 			Play("Standing");
