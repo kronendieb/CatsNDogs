@@ -9,12 +9,23 @@ public partial class Player : CharacterBody3D
 	private float Acceleration {get;set;} = 4.0f;
 	[Export]
 	private float Deceleration {get; set;} = 5.0f;
-	public const float JumpVelocity = 4.5f;
+	[Export]
+	public float JumpVelocity {get;set;} = 4.5f;
+	[Export]
+	public float maxJumps {get;set;} = 2.0f;
+	private float currentJumps {get;set;}
+
+	private Vector2 inputDir = Vector2.Zero;
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
 
-	public override void _PhysicsProcess(double delta)
+	private bool landed = false;
+    public override void _Ready(){
+		currentJumps = maxJumps;
+    }
+
+    public override void _PhysicsProcess(double delta)
 	{
 		Vector3 velocity = Velocity;
 		if(Input.IsActionJustPressed("Quit")){
@@ -22,16 +33,27 @@ public partial class Player : CharacterBody3D
 		}
 
 		// Add the gravity.
-		if (!IsOnFloor())
+		if (!IsOnFloor()){
 			velocity.Y -= gravity * (float)delta;
+			landed = false;
+		}
 
 		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
+		if (Input.IsActionJustPressed("Jump") && currentJumps > 0){
+			currentJumps -= 1;
 			velocity.Y = JumpVelocity;
+			EmitSignal("SignalJump");
+		}
+
+		if(!landed && IsOnFloor()){
+			currentJumps = maxJumps;
+			EmitSignal("SignalLanded");
+			landed = true;
+		}
 
 		// Get the input direction and handle the movement/deceleration.
 		// As good practice, you should replace UI actions with custom gameplay actions.
-		Vector2 inputDir = Input.GetVector("Left", "Right", "Forwards", "Backwards");
+		inputDir = Input.GetVector("Left", "Right", "Forwards", "Backwards").Normalized();
 		Vector3 direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
 		if (direction.LengthSquared() > 1){
 			direction /= direction.Length();
@@ -56,4 +78,11 @@ public partial class Player : CharacterBody3D
 		Velocity = velocity;
 		MoveAndSlide();
 	}
+
+	[Signal]
+	public delegate void SignalJumpEventHandler();
+	[Signal]
+	public delegate void SignalLandedEventHandler();
+
+
 }

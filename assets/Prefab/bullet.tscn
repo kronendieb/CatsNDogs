@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbwtb1574g6bl"]
+
+[ext_resource type="Script" path="res://Scripts/bullet.cs" id="1_hm87s"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wek1p"]
+height = 0.2
+radius = 0.1
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bxw8r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_13pg8"]
+albedo_color = Color(0.121569, 0.121569, 0.121569, 1)
+metallic = 0.42
+
+[node name="Bullet" type="AnimatableBody3D" node_paths=PackedStringArray("alive")]
+script = ExtResource("1_hm87s")
+speed = 10.0
+alive = NodePath("Timer")
+timeAlive = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_wek1p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.91069e-16, 4.37114e-09, -0.1, 0.1, -4.37114e-09, 0, -4.37114e-09, -0.1, -4.37114e-09, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_bxw8r")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_13pg8")
+
+[node name="Timer" type="Timer" parent="."]

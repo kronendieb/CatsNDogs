@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://xxncis5xumcy"]
+
+[ext_resource type="Script" path="res://Scripts/Cop.cs" id="1_q0ojl"]
+[ext_resource type="Texture2D" uid="uid://7i3t6blr2emo" path="res://assets/DogCopSprite.png" id="3_nbtn1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_httl5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxvdf"]
+atlas = ExtResource("3_nbtn1")
+region = Rect2(0, 0, 1080, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ud1ve"]
+atlas = ExtResource("3_nbtn1")
+region = Rect2(1080, 0, 1080, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km6pv"]
+atlas = ExtResource("3_nbtn1")
+region = Rect2(2160, 0, 1080, 1200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2aguo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxvdf")
+}],
+"loop": true,
+"name": &"Alert",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ud1ve")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km6pv")
+}],
+"loop": true,
+"name": &"Shooting",
+"speed": 5.0
+}]
+
+[node name="Cop" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16396, 1.81012, 1.38767)
+script = ExtResource("1_q0ojl")
+Speed = 3.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_httl5")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.18, 0.0258019, 0.197015, 0)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_2aguo")
+animation = &"Shooting"

@@ -1,0 +1,145 @@
+[gd_scene load_steps=19 format=3 uid="uid://c3ukchjygminy"]
+
+[ext_resource type="Script" path="res://Scripts/Splash.cs" id="1_l54lx"]
+[ext_resource type="Texture2D" uid="uid://da2027dml8fvo" path="res://assets/SplashArt2Sprite.png" id="2_mnqvu"]
+[ext_resource type="AudioStream" uid="uid://crmmsi8v8eu8c" path="res://assets/Old_School_instrumental_-_prod._Freek_van_Workum.wav" id="3_yvmsc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2js2g"]
+atlas = ExtResource("2_mnqvu")
+region = Rect2(0, 0, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqyo8"]
+atlas = ExtResource("2_mnqvu")
+region = Rect2(1200, 0, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2urvt"]
+atlas = ExtResource("2_mnqvu")
+region = Rect2(2400, 0, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lob8j"]
+atlas = ExtResource("2_mnqvu")
+region = Rect2(3600, 0, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0ug0"]
+atlas = ExtResource("2_mnqvu")
+region = Rect2(4800, 0, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0gg4"]
+atlas = ExtResource("2_mnqvu")
+region = Rect2(0, 1200, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hc008"]
+atlas = ExtResource("2_mnqvu")
+region = Rect2(1200, 1200, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ply0"]
+atlas = ExtResource("2_mnqvu")
+region = Rect2(2400, 1200, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85f11"]
+atlas = ExtResource("2_mnqvu")
+region = Rect2(3600, 1200, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fota"]
+atlas = ExtResource("2_mnqvu")
+region = Rect2(4800, 1200, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohaog"]
+atlas = ExtResource("2_mnqvu")
+region = Rect2(0, 2400, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmgd7"]
+atlas = ExtResource("2_mnqvu")
+region = Rect2(1200, 2400, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpdny"]
+atlas = ExtResource("2_mnqvu")
+region = Rect2(2400, 2400, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bec7i"]
+atlas = ExtResource("2_mnqvu")
+region = Rect2(3600, 2400, 1200, 1200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bsu2w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2js2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqyo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2urvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lob8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0ug0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0gg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hc008")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ply0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85f11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fota")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohaog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmgd7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpdny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bec7i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("sprite", "music")]
+script = ExtResource("1_l54lx")
+sprite = NodePath("Control/BoxContainer/AnimatedSprite2D")
+music = NodePath("Control/BoxContainer/AudioStreamPlayer2D")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 646.0
+
+[node name="BoxContainer" type="BoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1151.0
+offset_bottom = -646.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/BoxContainer"]
+position = Vector2(575.187, 326.375)
+scale = Vector2(0.959687, 0.716042)
+sprite_frames = SubResource("SpriteFrames_bsu2w")
+frame_progress = 0.765935
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Control/BoxContainer"]
+position = Vector2(545, 307)
+stream = ExtResource("3_yvmsc")
+volume_db = -15.0
